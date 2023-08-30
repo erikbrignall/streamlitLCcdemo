@@ -13,6 +13,7 @@ from langchain.agents.agent_types import AgentType
 
 st.set_page_config(page_title='GA4 Analyser')
 st.image('logo-temp2.PNG', width=200)
+st.write('Please input a query for the bot')
 
 openai_api_key = st.secrets["OpenAIapikey"]
 
@@ -37,8 +38,8 @@ def generate_response(input_query):
   return st.success(response)
 
 # Input widgets
-uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
-question_list = [
+#uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
+#question_list = [
   'How many rows are there?',
   'What is the range of values for MolWt with logS greater than 0?',
   'How many rows have MolLogP value greater than 0.',
@@ -52,6 +53,6 @@ if query_text is 'Other':
   query_text = st.text_input('Enter your query:', placeholder = 'Enter query here ...', disabled=not uploaded_file)
 if not openai_api_key.startswith('sk-'):
   st.warning('Please enter your OpenAI API key!', icon='⚠')
-if openai_api_key.startswith('sk-') and (uploaded_file is not None):
+if openai_api_key.startswith('sk-'):
   st.header('Output')
   generate_response(query_text)
