@@ -31,7 +31,7 @@ dfs = [df,df1,df2]
 
 ## Generate LLM response
 def generate_response(input_query):
-  llm = ChatOpenAI(model_name='gpt-3.5-turbo-0613', temperature=0, openai_api_key=openai_api_key)
+  llm = ChatOpenAI(model_name='gpt-3.5-turbo', temperature=0, openai_api_key=openai_api_key)
   #df = load_csv(csv_file)
   # Create Pandas DataFrame Agent
   agent = create_pandas_dataframe_agent(llm, dfs, verbose=True, agent_type=AgentType.OPENAI_FUNCTIONS)
