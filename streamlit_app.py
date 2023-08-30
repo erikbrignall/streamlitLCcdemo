@@ -7,6 +7,8 @@ Created on Fri Sep  9 09:08:31 2022
 
 import streamlit as st
 from langchain.llms import OpenAI
+import pandas as pd
+
 filename = 'origin_customers.csv'
 df = pd.read_csv(filename) 
 filename = 'products_sold.csv'
