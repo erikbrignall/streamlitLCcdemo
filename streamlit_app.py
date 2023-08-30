@@ -11,12 +11,13 @@ from langchain.chat_models import ChatOpenAI
 from langchain.agents import create_pandas_dataframe_agent
 from langchain.agents.agent_types import AgentType
 
+st.set_page_config(page_title='GA4 Analyser')
 st.image('logo-temp2.PNG', width=200)
 
 openai_api_key = st.secrets["OpenAIapikey"]
 
 # Page title
-st.set_page_config(page_title='GA4 Analyser')
+
 st.title('GA4 Analysis bot')
 
 filename = 'origin_customers.csv'
