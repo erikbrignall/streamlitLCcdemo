@@ -10,7 +10,7 @@ from langchain.llms import OpenAI
 
 st.title('🦜🔗 GA4 Analysis Bot')
 
-openai_api_key = OpenAIapikey
+openai_api_key = st.secrets["OpenAIapikey"]
 
 def generate_response(input_text):
   llm = OpenAI(temperature=0.7, openai_api_key=openai_api_key)
