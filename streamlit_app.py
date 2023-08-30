@@ -13,7 +13,6 @@ import pandas as pd
 from langchain.agents import create_pandas_dataframe_agent 
 from langchain.llms import OpenAI 
 from langchain.chat_models import ChatOpenAI
-import tabulate
 
 filename = 'origin_customers.csv'
 df = pd.read_csv(filename) 
