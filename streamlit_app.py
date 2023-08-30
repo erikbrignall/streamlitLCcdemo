@@ -8,8 +8,8 @@ Created on Fri Sep  9 09:08:31 2022
 import streamlit as st
 import pandas as pd
 import pandas as pd 
-import matplotlib.pyplot as plt 
-import seaborn as sns 
+#import matplotlib.pyplot as plt 
+#import seaborn as sns 
 from langchain.agents import create_pandas_dataframe_agent 
 from langchain.llms import OpenAI 
 from langchain.chat_models import ChatOpenAI
