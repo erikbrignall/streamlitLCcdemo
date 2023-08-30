@@ -7,6 +7,11 @@ Created on Fri Sep  9 09:08:31 2022
 
 import streamlit as st
 from langchain.llms import OpenAI
+filename = 'data/origin_customers.csv'
+df = pd.read_csv(filename) 
+filename = 'data/products_sold.csv'
+df1 = pd.read_csv(filename) 
+dfs = [df,df1]
 
 st.image('logo-temp2.PNG', width=200)
 st.title('🦜🔗 GA4 Analysis Bot')
