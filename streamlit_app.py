@@ -24,8 +24,10 @@ st.title('GA4 Analysis bot')
 filename = 'origin_customers.csv'
 df = pd.read_csv(filename) 
 filename = 'products_sold.csv'
-df1 = pd.read_csv(filename) 
-dfs = [df,df1]
+df1 = pd.read_csv(filename)
+filename = 'Queries.csv'
+df2 = pd.read_csv(filename)
+dfs = [df,df1,df2]
 
 ## Generate LLM response
 def generate_response(input_query):
