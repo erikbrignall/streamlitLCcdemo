@@ -6,8 +6,13 @@ Created on Fri Sep  9 09:08:31 2022
 """
 
 import streamlit as st
-from langchain.llms import OpenAI
 import pandas as pd
+import pandas as pd 
+import matplotlib.pyplot as plt 
+import seaborn as sns 
+from langchain.agents import create_pandas_dataframe_agent 
+from langchain.llms import OpenAI 
+from langchain.chat_models import ChatOpenAI
 
 filename = 'origin_customers.csv'
 df = pd.read_csv(filename) 
@@ -21,7 +26,8 @@ st.title('🦜🔗 GA4 Analysis Bot')
 openai_api_key = st.secrets["OpenAIapikey"]
 
 def generate_response(input_text):
-  llm = OpenAI(temperature=0.7, openai_api_key=openai_api_key)
+  #llm = OpenAI(temperature=0.7, openai_api_key=openai_api_key)
+  agent = create_pandas_dataframe_agent(OpenAI(temperature=0, model_name='gpt-3.5-turbo'), dfs, verbose=True)
   st.info(llm(input_text))
 
 with st.form('my_form'):
