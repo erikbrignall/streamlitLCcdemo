@@ -25,8 +25,8 @@ filename = 'products_sold.csv'
 df1 = pd.read_csv(filename) 
 dfs = [df,df1]
 
-# Generate LLM response
-def generate_response(csv_file, input_query):
+## Generate LLM response
+def generate_response(input_query):
   llm = ChatOpenAI(model_name='gpt-3.5-turbo-0613', temperature=0.2, openai_api_key=openai_api_key)
   #df = load_csv(csv_file)
   # Create Pandas DataFrame Agent
@@ -42,8 +42,9 @@ question_list = [
   'What is the range of values for MolWt with logS greater than 0?',
   'How many rows have MolLogP value greater than 0.',
   'Other']
-query_text = st.selectbox('Select an example query:', question_list, disabled=not uploaded_file)
-openai_api_key = st.text_input('OpenAI API Key', type='password', disabled=not (uploaded_file and query_text))
+#query_text = st.selectbox('Select an example query:', question_list, disabled=not uploaded_file)
+# openai_api_key = st.text_input('OpenAI API Key', type='password', disabled=not (uploaded_file and query_text))
+query_text = st.text_input('Enter Query')
 
 # App logic
 if query_text is 'Other':
@@ -52,4 +53,4 @@ if not openai_api_key.startswith('sk-'):
   st.warning('Please enter your OpenAI API key!', icon='⚠')
 if openai_api_key.startswith('sk-') and (uploaded_file is not None):
   st.header('Output')
-  generate_response(uploaded_file, query_text)
+  generate_response(query_text)
