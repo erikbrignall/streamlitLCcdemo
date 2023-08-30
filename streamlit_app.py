@@ -8,7 +8,7 @@ Created on Fri Sep  9 09:08:31 2022
 import streamlit as st
 from langchain.llms import OpenAI
 
-st.image('logo-temp2.PNG')
+st.image('logo-temp2.PNG', width=200)
 st.title('🦜🔗 GA4 Analysis Bot')
 
 openai_api_key = st.secrets["OpenAIapikey"]
