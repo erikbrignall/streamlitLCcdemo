@@ -40,10 +40,10 @@ def generate_response(input_query):
 # Input widgets
 #uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
 #question_list = [
-  'How many rows are there?',
-  'What is the range of values for MolWt with logS greater than 0?',
-  'How many rows have MolLogP value greater than 0.',
-  'Other']
+  #'How many rows are there?',
+  #'What is the range of values for MolWt with logS greater than 0?',
+  #'How many rows have MolLogP value greater than 0.',
+  #'Other']
 #query_text = st.selectbox('Select an example query:', question_list, disabled=not uploaded_file)
 # openai_api_key = st.text_input('OpenAI API Key', type='password', disabled=not (uploaded_file and query_text))
 query_text = st.text_input('Enter Query')
