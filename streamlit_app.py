@@ -53,6 +53,6 @@ if query_text is 'Other':
   query_text = st.text_input('Enter your query:', placeholder = 'Enter query here ...', disabled=not uploaded_file)
 if not openai_api_key.startswith('sk-'):
   st.warning('Please enter your OpenAI API key!', icon='⚠')
-if openai_api_key.startswith('sk-'):
+if openai_api_key.startswith('sk-') and query_text != "":
   st.header('Output')
   generate_response(query_text)
